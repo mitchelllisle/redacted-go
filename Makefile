@@ -1,2 +1,5 @@
 test:
-	go test ./... -coverprofile cover.out
+	go test -v ./... -coverprofile cover.out
+
+build:
+	go build -v ./...
