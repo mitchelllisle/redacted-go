@@ -1,0 +1,5 @@
+mode: set
+redacted-go/internal/anonymiser.go:17.54,21.32 3 1
+redacted-go/internal/anonymiser.go:27.2,27.15 1 1
+redacted-go/internal/anonymiser.go:21.32,26.3 4 1
+redacted-go/internal/infoTypes.go:10.45,13.2 2 0
