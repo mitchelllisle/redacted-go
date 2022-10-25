@@ -2,16 +2,20 @@ package main
 
 import (
 	"redacted-go/internal"
-	"regexp"
 )
 
 func main() {
-	r, _ := regexp.Compile("hello")
+	infoTypes := []internal.InfoType{
+		internal.AusDriversLicence(),
+		internal.Email(),
+	}
 
-	anonymiser := internal.Anonymiser{Expr: r}
+	anonymiser := internal.NewAnonymiser(infoTypes)
 
-	text := "hello hello world"
+	text := "hello 000000 mitchell@lisle.com"
 	matches := anonymiser.GetMatches(text)
 
-	println(matches)
+	for _, m := range matches {
+		println(m.Text)
+	}
 }

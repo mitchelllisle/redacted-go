@@ -24,5 +24,4 @@ func TestHelloAnonymiser(t *testing.T) {
 			t.Errorf("expected 2 matche; got %v", len(output))
 		}
 	})
-
 }
