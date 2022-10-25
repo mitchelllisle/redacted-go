@@ -1,0 +1,16 @@
+mode: set
+redacted-go/internal/utils.go:5.46,6.16 1 1
+redacted-go/internal/utils.go:6.16,8.3 1 0
+redacted-go/internal/anonymiser.go:20.68,22.11 2 1
+redacted-go/internal/anonymiser.go:25.2,30.27 3 1
+redacted-go/internal/anonymiser.go:33.2,36.16 4 1
+redacted-go/internal/anonymiser.go:22.11,24.3 1 0
+redacted-go/internal/anonymiser.go:30.27,32.3 1 0
+redacted-go/internal/anonymiser.go:39.54,42.32 2 1
+redacted-go/internal/anonymiser.go:46.2,48.51 3 1
+redacted-go/internal/anonymiser.go:42.32,45.3 2 1
+redacted-go/internal/anonymiser.go:51.54,55.32 3 1
+redacted-go/internal/anonymiser.go:61.2,61.15 1 1
+redacted-go/internal/anonymiser.go:55.32,60.3 4 1
+redacted-go/internal/infoTypes.go:9.35,17.2 3 1
+redacted-go/internal/infoTypes.go:19.23,27.2 3 1
