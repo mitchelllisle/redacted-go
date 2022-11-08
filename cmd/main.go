@@ -1,21 +1,20 @@
 package main
 
 import (
-	"redacted-go/internal"
+	"fmt"
+	"redacted-go/redacted"
 )
 
 func main() {
-	infoTypes := []internal.InfoType{
-		internal.AusDriversLicence(),
-		internal.Email(),
+	infoTypes := []redacted.InfoType{
+		redacted.AusDriversLicence(),
+		redacted.Email(),
+		redacted.AusTaxFileNumber(),
 	}
 
-	anonymiser := internal.NewAnonymiser(infoTypes)
+	anonymiser := redacted.NewAnonymiser(infoTypes)
 
-	text := "hello 000000 mitchell@lisle.com"
-	matches := anonymiser.GetMatches(text)
-
-	for _, m := range matches {
-		println(m.Text)
-	}
+	text := "hello 000000 mitchell@lisle.com 000000 mitch@lisle.com"
+	anonymised := anonymiser.Anonymise(text)
+	fmt.Println(anonymised)
 }

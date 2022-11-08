@@ -1,4 +1,4 @@
-package internal
+package redacted
 
 import "log"
 

@@ -1,4 +1,4 @@
-package internal
+package redacted
 
 import (
 	"github.com/brianvoe/gofakeit/v6"
