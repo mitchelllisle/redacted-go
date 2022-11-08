@@ -1,4 +1,4 @@
-module redacted-go
+module github.com/mitchelllisle/redacted
 
 go 1.19
 
