@@ -34,4 +34,46 @@ func TestInfoTypes(t *testing.T) {
 			}
 		}
 	})
+
+	t.Run("match ids for AusPassport InfoType", func(t *testing.T) {
+		inf := AusPassport()
+		infoTypes := []InfoType{inf}
+		anonymiser := NewAnonymiser(infoTypes)
+
+		for i := 1; i <= simulations; i++ {
+			generated := gofakeit.Regex(inf.Expr)
+			matches := anonymiser.GetMatches(generated)
+			if len(matches) != 1 {
+				t.Errorf("expected 1 matche; got %v", len(matches))
+			}
+		}
+	})
+
+	t.Run("match ids for AusLicensePlate InfoType", func(t *testing.T) {
+		inf := AusLicensePlate()
+		infoTypes := []InfoType{inf}
+		anonymiser := NewAnonymiser(infoTypes)
+
+		for i := 1; i <= simulations; i++ {
+			generated := gofakeit.Regex(inf.Expr)
+			matches := anonymiser.GetMatches(generated)
+			if len(matches) != 1 {
+				t.Errorf("expected 1 matche; got %v", len(matches))
+			}
+		}
+	})
+
+	t.Run("match ids for AusTaxFileNumber InfoType", func(t *testing.T) {
+		inf := AusTaxFileNumber()
+		infoTypes := []InfoType{inf}
+		anonymiser := NewAnonymiser(infoTypes)
+
+		for i := 1; i <= simulations; i++ {
+			generated := gofakeit.Regex(inf.Expr)
+			matches := anonymiser.GetMatches(generated)
+			if len(matches) != 1 {
+				t.Errorf("expected 1 matche; got %v", len(matches))
+			}
+		}
+	})
 }

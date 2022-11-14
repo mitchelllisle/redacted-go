@@ -1,6 +1,8 @@
 package redacted
 
-import "github.com/brianvoe/gofakeit/v6"
+import (
+	"github.com/brianvoe/gofakeit/v6"
+)
 
 type InfoType struct {
 	Expr         string
