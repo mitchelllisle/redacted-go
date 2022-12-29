@@ -1,23 +1,8 @@
-##  redacted
-
-> 1️⃣ version: 0.2.0
-
-> ✍️ author: Mitchell Lisle
-
-📛 An experimental data anonymisation library
-
-## Install
-
-
-## Usage
-
-### Anonymiser
-```go
 package main
 
 import (
 	"fmt"
-	"github.com/mitchelllisle/redacted-go/redacted"
+	"github.com/mitchelllisle/redacted/redacted"
 )
 
 func main() {
@@ -34,8 +19,4 @@ func main() {
 	out := anonymiser.Anonymise(text)
 
 	fmt.Println(out.AnonymisedText)
-	// {{LAST_NAME}} {{LAST_NAME}} wendyschneider@tillman.com 2M46-yiS23441
 }
-
-
-```

@@ -18,7 +18,8 @@ func FakeInfoType() InfoType {
 
 func TestHelloAnonymiser(t *testing.T) {
 	infT := []InfoType{FakeInfoType()}
-	anonymiser := NewAnonymiser(infT)
+	matcher := NewRegexMatcher(infT)
+	anonymiser := Anonymiser{Matchers: []Matcher{matcher}}
 
 	t.Run("one match in string", func(t *testing.T) {
 		output := anonymiser.GetMatches("hello world")
@@ -39,7 +40,8 @@ func TestHelloAnonymiser(t *testing.T) {
 
 func TestNewAnonymiser(t *testing.T) {
 	infoTypes := []InfoType{Email(), AusDriversLicence()}
-	anonymiser := NewAnonymiser(infoTypes)
+	matcher := NewRegexMatcher(infoTypes)
+	anonymiser := Anonymiser{Matchers: []Matcher{matcher}}
 
 	t.Run("example string", func(t *testing.T) {
 		text := "hello 000000 mitchell@lisle.com 000000 mitch@lisle.com"

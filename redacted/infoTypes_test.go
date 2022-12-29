@@ -9,8 +9,9 @@ func TestInfoTypes(t *testing.T) {
 	simulations := 1000
 
 	t.Run("match emails for Email InfoType", func(t *testing.T) {
-		infoTypes := []InfoType{Email()}
-		anonymiser := NewAnonymiser(infoTypes)
+		infT := Email()
+		matcher := NewRegexMatcher([]InfoType{infT})
+		anonymiser := Anonymiser{Matchers: []Matcher{matcher}}
 
 		for i := 1; i <= simulations; i++ {
 			email := gofakeit.Email()
@@ -22,12 +23,12 @@ func TestInfoTypes(t *testing.T) {
 	})
 
 	t.Run("match ids for AusDriversLicence InfoType", func(t *testing.T) {
-		inf := AusDriversLicence()
-		infoTypes := []InfoType{inf}
-		anonymiser := NewAnonymiser(infoTypes)
+		infT := AusDriversLicence()
+		matcher := NewRegexMatcher([]InfoType{infT})
+		anonymiser := Anonymiser{Matchers: []Matcher{matcher}}
 
 		for i := 1; i <= simulations; i++ {
-			generated := gofakeit.Regex(inf.Expr)
+			generated := gofakeit.Regex(infT.Expr)
 			matches := anonymiser.GetMatches(generated)
 			if len(matches) != 1 {
 				t.Errorf("expected 1 matche; got %v", len(matches))
@@ -36,12 +37,12 @@ func TestInfoTypes(t *testing.T) {
 	})
 
 	t.Run("match ids for AusPassport InfoType", func(t *testing.T) {
-		inf := AusPassport()
-		infoTypes := []InfoType{inf}
-		anonymiser := NewAnonymiser(infoTypes)
+		infT := AusPassport()
+		matcher := NewRegexMatcher([]InfoType{infT})
+		anonymiser := Anonymiser{Matchers: []Matcher{matcher}}
 
 		for i := 1; i <= simulations; i++ {
-			generated := gofakeit.Regex(inf.Expr)
+			generated := gofakeit.Regex(infT.Expr)
 			matches := anonymiser.GetMatches(generated)
 			if len(matches) != 1 {
 				t.Errorf("expected 1 matche; got %v", len(matches))
@@ -50,12 +51,12 @@ func TestInfoTypes(t *testing.T) {
 	})
 
 	t.Run("match ids for AusLicensePlate InfoType", func(t *testing.T) {
-		inf := AusLicensePlate()
-		infoTypes := []InfoType{inf}
-		anonymiser := NewAnonymiser(infoTypes)
+		infT := AusLicensePlate()
+		matcher := NewRegexMatcher([]InfoType{infT})
+		anonymiser := Anonymiser{Matchers: []Matcher{matcher}}
 
 		for i := 1; i <= simulations; i++ {
-			generated := gofakeit.Regex(inf.Expr)
+			generated := gofakeit.Regex(infT.Expr)
 			matches := anonymiser.GetMatches(generated)
 			if len(matches) != 1 {
 				t.Errorf("expected 1 matche; got %v", len(matches))
@@ -64,12 +65,12 @@ func TestInfoTypes(t *testing.T) {
 	})
 
 	t.Run("match ids for AusTaxFileNumber InfoType", func(t *testing.T) {
-		inf := AusTaxFileNumber()
-		infoTypes := []InfoType{inf}
-		anonymiser := NewAnonymiser(infoTypes)
+		infT := AusTaxFileNumber()
+		matcher := NewRegexMatcher([]InfoType{infT})
+		anonymiser := Anonymiser{Matchers: []Matcher{matcher}}
 
 		for i := 1; i <= simulations; i++ {
-			generated := gofakeit.Regex(inf.Expr)
+			generated := gofakeit.Regex(infT.Expr)
 			matches := anonymiser.GetMatches(generated)
 			if len(matches) != 1 {
 				t.Errorf("expected 1 matche; got %v", len(matches))
