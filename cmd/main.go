@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/mitchelllisle/redacted/redacted"
+	"github.com/mitchelllisle/redacted-go/redacted"
 )
 
 func main() {
@@ -12,7 +12,7 @@ func main() {
 		{"Millhouse", "{{FIRST_NAME}}", 100},
 		{"Van Houten", "{{LAST_NAME}}", 100},
 	})
-	regexMatcher := redacted.NewRegexMatcher([]redacted.InfoType{redacted.Email(), redacted.AusLicensePlate()})
+	regexMatcher := redacted.NewRegexMatcher([]redacted.InfoType{redacted.Email(), redacted.AusDriversLicence()})
 
 	anonymiser := redacted.Anonymiser{Matchers: []redacted.Matcher{fuzzMatcher, regexMatcher}}
 
