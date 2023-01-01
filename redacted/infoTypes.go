@@ -1,6 +1,7 @@
 package redacted
 
 import (
+	"fmt"
 	"github.com/brianvoe/gofakeit/v6"
 )
 
@@ -63,5 +64,27 @@ func Email() InfoType {
 		Name:         name,
 		WordBoundary: false,
 		Generate:     func() string { return gofakeit.Email() },
+	}
+}
+
+func AusPostCode() InfoType {
+	name := "AusPostCode"
+	expr := `(0[289][0-9]{2}\)|([1345689][0-9]{3})|(2[0-9][0-9]{2})|(290[0-9])|(291[0-9])|(7[0-4][0-9]{2})|(7[8-9][0-9]{2}))`
+	return InfoType{
+		Expr:         expr,
+		Name:         name,
+		WordBoundary: false,
+		Generate:     func() string { return gofakeit.Regex(expr) },
+	}
+}
+
+func LongDigit(minLength int) InfoType {
+	name := "LongDigit"
+	expr := fmt.Sprintf("\\d{%v}", minLength)
+	return InfoType{
+		Expr:         expr,
+		Name:         name,
+		WordBoundary: false,
+		Generate:     func() string { return gofakeit.Regex(expr) },
 	}
 }
