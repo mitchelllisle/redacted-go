@@ -56,11 +56,13 @@ func (m *FuzzyMatcher) Match(text string) []Match {
 
 func NewFuzzyMatcher(phrases []Phrase) *FuzzyMatcher {
 	var fuzzyPhrases []FuzzyMatchPhrase
-
 	for _, p := range phrases {
+		replacement := p.Replacement
+		genFunc := func() string { return replacement }
+
 		fuzzyPhrases = append(fuzzyPhrases, FuzzyMatchPhrase{
 			Phrase:    p.Phrase,
-			Generate:  func() string { return p.Replacement },
+			Generate:  genFunc,
 			Threshold: p.Threshold,
 		})
 	}

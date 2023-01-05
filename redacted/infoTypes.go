@@ -80,11 +80,11 @@ func AusPostCode() InfoType {
 
 func LongDigit(minLength int) InfoType {
 	name := "LongDigit"
-	expr := fmt.Sprintf("\\d{%v}", minLength)
+	expr := fmt.Sprintf("\\d{{%v}", minLength)
 	return InfoType{
 		Expr:         expr,
 		Name:         name,
 		WordBoundary: false,
-		Generate:     func() string { return gofakeit.Regex(expr) },
+		Generate:     nil,
 	}
 }
