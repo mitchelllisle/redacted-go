@@ -5,7 +5,10 @@ import (
 )
 
 func TestNewFuzzyMatcher(t *testing.T) {
-	validMatcher := NewFuzzyMatcher([]Phrase{{"hello", "{GREETING}", 100}})
+	validMatcher := NewFuzzyMatcher([]Phrase{
+		{"hello", "{GREETING}", 100},
+		{"other", "{OTHER}", 100},
+	})
 	//thresholdMatcher := NewFuzzyMatcher([]Phrase{{"missing", "{MISSING}", 1}})
 
 	t.Run("test new fuzzy matches", func(t *testing.T) {

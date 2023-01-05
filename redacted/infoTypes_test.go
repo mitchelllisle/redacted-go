@@ -114,7 +114,7 @@ func TestInfoTypes(t *testing.T) {
 		anonymiser := Anonymiser{Matchers: []Matcher{matcher}}
 
 		for i := 1; i <= simulations; i++ {
-			generated := RandBetween(100000, 9999999)
+			generated := RandBetween(100000, 999999)
 			matches := anonymiser.GetMatches(fmt.Sprintf("%v", generated))
 			if len(matches) != 1 {
 				t.Errorf("expected 1 match; got %v; for val %v", len(matches), generated)

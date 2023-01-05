@@ -80,7 +80,7 @@ func AusPostCode() InfoType {
 
 func LongDigit(minLength int) InfoType {
 	name := "LongDigit"
-	expr := fmt.Sprintf("\\d{{%v}", minLength)
+	expr := fmt.Sprintf("\\d{%v}", minLength)
 	return InfoType{
 		Expr:         expr,
 		Name:         name,
