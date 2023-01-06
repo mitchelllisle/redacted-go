@@ -13,7 +13,6 @@ type RegexMatcher struct {
 	infoTypeNames []string
 	Name          string
 	WordBoundary  bool
-	Generate      func() string
 }
 
 func getPositionsForExpr(expr *regexp.Regexp, text string) []Position {
@@ -110,6 +109,5 @@ func NewRegexMatcher(infoTypes []InfoType) *RegexMatcher {
 		infoTypeMap:   infoTypeMap,
 		infoTypeNames: names,
 		WordBoundary:  false,
-		Generate:      func() string { return "" },
 	}
 }
