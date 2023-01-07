@@ -43,7 +43,7 @@ func TestNewAnonymiser(t *testing.T) {
 	matcher := NewRegexMatcher(infoTypes)
 	anonymiser := Anonymiser{Matchers: []Matcher{matcher}}
 
-	t.Run("example string", func(t *testing.T) {
+	t.Run("examples string", func(t *testing.T) {
 		text := "hello 000000 mitchell@lisle.com 000000 mitch@lisle.com"
 		output := anonymiser.Anonymise(text)
 
