@@ -7,4 +7,4 @@ require (
 	github.com/lithammer/fuzzysearch v1.1.5
 )
 
-require golang.org/x/text v0.3.7 // indirect
+require golang.org/x/text v0.3.8 // indirect
